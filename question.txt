@@ -1,0 +1,8 @@
+I have boto3 set up i have aws credentials set up:
+I want to do a listing of my bucket: "00009999000088889999" and the especially the folder: "ma-access" this might vary in the future.
+This folder "ma-access" will have multiple subfolders for each folder i would like to create a JSON-file with the following content:[
+    {"url":  "https://00009999000088889999.s3.eu-west-1.amazonaws.com/ma-access/Julietta-Veggie_Lifestyle/0001.jpg","title":  "Julietta-Veggie Lifestyle - 0001" },
+    {"url":  "https://00009999000088889999.s3.eu-west-1.amazonaws.com/ma-access/Julietta-Veggie_Lifestyle/0002.jpg","title":  "Julietta-Veggie Lifestyle - 0001" },
+    {"url":  "https://00009999000088889999.s3.eu-west-1.amazonaws.com/ma-access/Julietta-Veggie_Lifestyle/0003.jpg","title":  "Julietta-Veggie Lifestyle - 0001t" },
+];
+

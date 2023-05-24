@@ -1,0 +1,36 @@
+
+function AppWrapper() {
+  const [selectedScript, setSelectedScript] = useState(null);
+  const [App, setApp] = useState(() => () => <h1>Select a gallery</h1>); // Initialize with a placeholder component
+
+  useEffect(() => {
+    if (selectedScript) {
+      import(`./js/${selectedScript}.js`)
+        .then(AppModule => {
+          setApp(() => AppModule.default); // Update the state with the imported App component
+        })
+        .catch(err => console.error('Error loading module', err));
+    }
+  }, [selectedScript]);
+
+  if (!selectedScript) {
+    return (
+      <div className="d-flex flex-column">
+        <h1>Select a Gallery:</h1>
+        {availableScripts.map(script => (
+          <button type="button" className="selection" key={script} onClick={() => setSelectedScript(script)}>
+            {script}
+          </button>
+        ))}
+      </div>
+    );
+  }
+
+  return (
+    <StrictMode>
+      <App />
+    </StrictMode>
+  );
+}
+
+root.render(<AppWrapper />);

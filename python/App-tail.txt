@@ -1,0 +1,19 @@
+        
+    ;
+
+  return (
+    <div className="App">
+      <ImageGallery
+        items={images}
+        showPlayButton={true}
+        showFullscreenButton={true}
+        slideInterval={3000}
+        slideOnThumbnailOver={true}
+        showIndex={true}
+        onPlay={() => {
+          alert("slideshow is now playing!");
+        }}
+      />
+    </div>
+  );
+}
